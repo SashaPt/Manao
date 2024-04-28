@@ -1,7 +1,7 @@
 import * as flsFunctions from './modules/functions.js';
 import { handleForm } from './modules/handleForm.js';
 import { handleScroll } from './modules/handleScroll.js';
-import { popUp } from './modules/popUp.js';
+import { controlScroll, popUp } from './modules/popUp.js';
 import { swiperInit } from './modules/swiperInit.js';
 
 const onLoad = () => {
@@ -19,7 +19,12 @@ const onLoad = () => {
   popUp(modal, modalBtns);
   popUp(menu, menuBtns);
 
-  menuLinks.forEach((link) => link.addEventListener('click', () => menu.classList.remove('visible')));
+  menuLinks.forEach((link) =>
+    link.addEventListener('click', () => {
+      menu.classList.remove('visible');
+      controlScroll(menu);
+    })
+  );
 };
 
 window.addEventListener('DOMContentLoaded', onLoad);
