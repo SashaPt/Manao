@@ -38,7 +38,7 @@ const parseData = (fields) => {
   });
 };
 
-const onSubmit = (e, fields, btn) => {
+const onSubmit = (e, fields) => {
   e.preventDefault();
 
   const isValid = validateFields(fields);
@@ -50,7 +50,6 @@ const onSubmit = (e, fields, btn) => {
   fields.forEach((field) => {
     field.type == 'checkbox' ? (field.checked = false) : (field.value = '');
   });
-  btn.disabled = true;
 
   const popUp = document.querySelector('.pop-up');
   if (popUp) {
@@ -65,8 +64,7 @@ export const handleForm = (form) => {
 
   fields.forEach((field) => {
     field.addEventListener('change', () => {
-      const isValid = validateFields(fields, field);
-      formSubmit.disabled = !isValid;
+      validateFields(fields, field);
     });
   });
 
