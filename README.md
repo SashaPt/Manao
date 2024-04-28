@@ -1,5 +1,5 @@
 # Manao
 
-##Landing page layout
+## Landing page layout
 
 [View deployment](https://sashapt.github.io/Manao)
