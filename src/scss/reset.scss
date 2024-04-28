@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-style: normal;
+  -webkit-tap-highlight-color: transparent;
+  &.no-scroll {
+    overflow: hidden;
+    position: relative;
+    -ms-touch-action: none;
+    touch-action: none;
+  }
+}
+body {
+  width: 100%;
+  position: relative;
+  background-color: #ffffff;
+}
+
+section {
+  width: 100%;
+  position: relative;
+}
+button {
+  cursor: pointer;
+  background: transparent;
+  &[disabled]{
+    cursor: not-allowed;
+  }
+}
+:focus,
+:active {
+  outline: none;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+input,
+textarea,
+select,
+button,
+option {
+  outline: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+input[type='radio'],
+input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+.swiper {
+  &-button-next,
+  &-button-prev {
+    &::after {
+      display: none;
+    }
+  }
+  &-button-next.swiper-button-disabled,
+  &-button-prev.swiper-button-disabled {
+    opacity: 1;
+  }
+}
+
+::selection {
+  background: #3f0f72;
+  color: #fff;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f6f4f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #300c56;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f0f72;
+}
